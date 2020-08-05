@@ -1,4 +1,4 @@
-public class EmpWageComputationProg
+public class EmpWageComputation
 {
 	public static void main(String args[])
 	{
@@ -9,10 +9,18 @@ public class EmpWageComputationProg
 		int empHrs=0;
 		int dailyWage=0;
 		double empCheck=Math.floor(Math.random()*10)%3;
-		if (empCheck == IS_FULL_TIME)
-			empHrs=8;
-		else if (empCheck == IS_PART_TIME)
-			empHrs=4;
+		switch((int)empCheck)
+		{
+			case IS_FULL_TIME:
+						empHrs=8;
+						break;
+			case IS_PART_TIME:
+						empHrs=4;
+						break;
+			default:
+						empHrs=0;
+						break;
+		}
 		dailyWage=empHrs*EMP_RATE_PER_HR;
 		System.out.println("Daily wage of employee is:"+dailyWage);
 	}
